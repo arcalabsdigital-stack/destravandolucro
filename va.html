@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Destravando o Lucro — Feche os 7 Vazamentos em 48h</title>
+<meta name="description" content="Descubra e feche os 7 vazamentos que estão drenando o lucro do seu negócio. Método prático de Márcio Morais, 24 anos de experiência, +150 empresas atendidas.">
+<style>
+  :root{
+    --dark:#0B2E22;
+    --dark2:#0F3D2C;
+    --accent:#F5B400;
+    --accent-dark:#C98F00;
+    --text:#1A1A1A;
+    --muted:#5B6B63;
+    --bg-soft:#F4F7F5;
+    --danger:#B23A2E;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--text);
+    line-height:1.5;
+    background:#fff;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  .container{max-width:600px;margin:0 auto;padding:0 20px;}
+  a{color:inherit;}
+
+  /* Topbar */
+  .topbar{
+    background:#fff;
+    text-align:center;
+    padding:14px 20px;
+    border-bottom:1px solid #E4EAE7;
+  }
+  .topbar-brand{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .topbar-brand img{height:56px;width:auto;max-width:none;}
+  .topbar-sub{display:block;font-weight:400;font-size:12px;color:var(--muted);margin-top:6px;}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(180deg,var(--dark) 0%,var(--dark2) 100%);
+    color:#fff;
+    padding:28px 0 32px;
+    text-align:center;
+  }
+  .eyebrow{
+    display:inline-block;
+    background:rgba(245,180,0,.15);
+    color:var(--accent);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.6px;
+    padding:6px 14px;
+    border-radius:999px;
+    margin-bottom:16px;
+  }
+  .hero h1{
+    font-size:26px;
+    line-height:1.25;
+    font-weight:800;
+    margin-bottom:14px;
+  }
+  .hero p.sub{
+    font-size:16px;
+    color:#D9E4DE;
+    margin-bottom:20px;
+  }
+  .hero-img{
+    border-radius:12px;
+    overflow:hidden;
+    margin-bottom:22px;
+    box-shadow:0 10px 30px rgba(0,0,0,.35);
+    background:#fff;
+    padding:10px;
+  }
+  .hero-img img{width:100%;height:auto;object-fit:contain;}
+
+  /* CTA button */
+  .cta-btn{
+    display:block;
+    width:100%;
+    background:var(--accent);
+    color:var(--dark);
+    text-decoration:none;
+    font-weight:800;
+    font-size:17px;
+    text-align:center;
+    padding:18px 20px;
+    border-radius:10px;
+    box-shadow:0 6px 20px rgba(245,180,0,.35);
+    transition:transform .1s ease;
+  }
+  .cta-btn:active{transform:scale(.98);}
+  .price-line{
+    text-align:center;
+    color:#fff;
+    font-size:15px;
+    margin-top:14px;
+    font-weight:600;
+  }
+  .price-line small{display:block;color:#B7C7BF;font-weight:400;font-size:13px;margin-top:4px;}
+  .trust-line{
+    text-align:center;
+    font-size:12.5px;
+    color:#9FB3A9;
+    margin-top:12px;
+  }
+
+  /* Sections */
+  section{padding:36px 0;}
+  .section-title{
+    font-size:21px;
+    font-weight:800;
+    text-align:center;
+    margin-bottom:22px;
+    color:var(--dark);
+  }
+  .bg-soft{background:var(--bg-soft);}
+
+  /* Checklist */
+  .checklist{list-style:none;}
+  .checklist li{
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+    font-size:15.5px;
+    margin-bottom:14px;
+  }
+  .checklist li::before{
+    content:"✅";
+    flex-shrink:0;
+    font-size:16px;
+  }
+
+  /* 7 vazamentos */
+  .leak{
+    display:flex;
+    gap:14px;
+    align-items:flex-start;
+    padding:16px 0;
+    border-bottom:1px solid #E4EAE7;
+  }
+  .leak:last-child{border-bottom:none;}
+  .leak-num{
+    flex-shrink:0;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    background:var(--danger);
+    color:#fff;
+    font-weight:800;
+    font-size:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .leak-title{font-weight:700;font-size:15.5px;margin-bottom:3px;}
+  .leak-desc{font-size:14px;color:var(--muted);}
+
+  /* Stack */
+  .stack-list{list-style:none;}
+  .stack-list li{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px 0;
+    border-bottom:1px dashed #D8E0DC;
+    font-size:14.5px;
+  }
+  .stack-list li:last-child{border-bottom:none;}
+  .stack-list .item-price{
+    text-decoration:line-through;
+    color:#9AA6A0;
+    font-size:13.5px;
+    white-space:nowrap;
+    margin-left:10px;
+  }
+  .stack-total{
+    margin-top:18px;
+    background:var(--dark);
+    color:#fff;
+    border-radius:12px;
+    padding:20px;
+    text-align:center;
+  }
+  .stack-total .label{font-size:13px;color:#B7C7BF;margin-bottom:6px;}
+  .stack-total .value-old{font-size:16px;text-decoration:line-through;color:#8FA79A;}
+  .stack-total .value-new{font-size:32px;font-weight:800;color:var(--accent);margin:4px 0;}
+  .stack-total .installments{font-size:14px;color:#D9E4DE;}
+
+  /* Authority */
+  .authority{
+    display:flex;
+    gap:16px;
+    align-items:center;
+  }
+  .authority img{
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    object-fit:cover;
+    object-position:center 18%;
+    flex-shrink:0;
+    border:3px solid var(--accent);
+  }
+  .authority h3{font-size:17px;margin-bottom:4px;}
+  .authority p{font-size:13.5px;color:var(--muted);}
+
+  /* Guarantee */
+  .guarantee{
+    text-align:center;
+    background:#fff;
+    border:2px solid var(--accent);
+    border-radius:14px;
+    padding:26px 20px;
+  }
+  .guarantee .shield{font-size:38px;margin-bottom:10px;}
+  .guarantee h3{font-size:18px;margin-bottom:8px;}
+  .guarantee p{font-size:14px;color:var(--muted);}
+
+  /* FAQ */
+  .faq-item{margin-bottom:18px;}
+  .faq-item h4{font-size:15px;margin-bottom:4px;}
+  .faq-item p{font-size:14px;color:var(--muted);}
+
+  /* Final CTA */
+  .final-cta{
+    background:linear-gradient(180deg,var(--dark2) 0%,var(--dark) 100%);
+    color:#fff;
+    text-align:center;
+    padding:40px 0 34px;
+  }
+  .final-cta h2{font-size:23px;font-weight:800;margin-bottom:12px;}
+  .final-cta p.sub{color:#D9E4DE;font-size:15px;margin-bottom:22px;}
+  .whatsapp-link{
+    display:inline-block;
+    margin-top:16px;
+    font-size:13.5px;
+    color:#9FB3A9;
+    text-decoration:underline;
+  }
+
+  footer{
+    text-align:center;
+    padding:20px;
+    font-size:12px;
+    color:#9AA6A0;
+    background:#fff;
+  }
+</style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="topbar-brand">
+      <img src="https://res.cloudinary.com/dtgcobo29/image/upload/v1767848025/1-site_ug46ln.webp" alt="Destravando o Lucro" loading="eager">
+    </div>
+    <span class="topbar-sub">Método de Márcio Morais</span>
+  </div>
+
+  <div class="hero">
+    <div class="container">
+      <span class="eyebrow">RESULTADOS EM 48 HORAS</span>
+      <h1>Seu negócio fatura bem. Então por que o dinheiro nunca sobra no fim do mês?</h1>
+      <p class="sub">Descubra os 7 vazamentos que estão drenando o lucro da sua empresa agora mesmo — e feche todos eles em 48 horas, mesmo sem entender de números.</p>
+
+      <div class="hero-img">
+        <img src="https://res.cloudinary.com/dtgcobo29/image/upload/v1767848025/2-site_yvfif4.png" alt="Antes e depois da organização financeira do negócio" loading="eager">
+      </div>
+
+      <a href="https://pay.hotmart.com/T100741493K?off=6i0q0c7z" class="cta-btn">QUERO DESTRAVAR MEU LUCRO</a>
+      <div class="price-line">
+        R$67 à vista ou 9x de R$8,80
+        <small>R$504 em bônus inclusos — oferta por tempo limitado</small>
+      </div>
+      <div class="trust-line">🔒 Compra 100% segura via Hotmart • Garantia de 7 dias</div>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">Isso aqui é pra você se...</h2>
+      <ul class="checklist">
+        <li>Fatura entre R$1,5 milhão e R$3 milhões por ano, mas não sabe exatamente pra onde vai o lucro</li>
+        <li>Trabalha o dia inteiro no negócio e sente que "deveria estar sobrando mais" pelo tanto que fatura</li>
+        <li>Já tentou controlar tudo em planilha, começou animado e abandonou em duas semanas</li>
+        <li>Mistura as contas da empresa com as contas pessoais e perdeu a régua do que é o quê</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="bg-soft">
+    <div class="container">
+      <h2 class="section-title">Os 7 vazamentos que comem o seu lucro</h2>
+
+      <div class="leak">
+        <div class="leak-num">1</div>
+        <div><div class="leak-title">O Ralo das Tarifas Invisíveis</div><div class="leak-desc">Juros e taxas que corroem sua margem sem você perceber.</div></div>
+      </div>
+      <div class="leak">
+        <div class="leak-num">2</div>
+        <div><div class="leak-title">A Síndrome do Bolso Único</div><div class="leak-desc">Misturar CPF com CNPJ e perder a conta do que é custo da empresa.</div></div>
+      </div>
+      <div class="leak">
+        <div class="leak-num">3</div>
+        <div><div class="leak-title">A Sangria do Cartão</div><div class="leak-desc">Antecipações que drenam sua lucratividade mês após mês.</div></div>
+      </div>
+      <div class="leak">
+        <div class="leak-num">4</div>
+        <div><div class="leak-title">O Pró-labore "Saca-rolha"</div><div class="leak-desc">Retiradas desordenadas que travam o caixa da empresa.</div></div>
+      </div>
+      <div class="leak">
+        <div class="leak-num">5</div>
+        <div><div class="leak-title">O Labirinto Tributário</div><div class="leak-desc">Pagar imposto a mais por falta de organização financeira.</div></div>
+      </div>
+      <div class="leak">
+        <div class="leak-num">6</div>
+        <div><div class="leak-title">O Estoque/Operação Zumbi</div><div class="leak-desc">Dinheiro parado em ineficiência que ninguém enxerga.</div></div>
+      </div>
+      <div class="leak">
+        <div class="leak-num">7</div>
+        <div><div class="leak-title">Ausência da Reserva Financeira</div><div class="leak-desc">Sem colchão de segurança, todo imprevisto vira crise.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">O que você recebe hoje</h2>
+      <p style="font-weight:700;font-size:15.5px;margin-bottom:14px;">🎯 Método completo: feche os 7 Vazamentos do Lucro em 48h</p>
+      <p style="font-size:13.5px;color:var(--muted);margin-bottom:8px;">+ bônus inclusos:</p>
+      <ul class="stack-list">
+        <li>Guia da Paz Financeira <span class="item-price">R$50</span></li>
+        <li>Raio-X Financeiro do Negócio <span class="item-price">R$80</span></li>
+        <li>Balança do Dinheiro: Sonhos x Responsabilidades <span class="item-price">R$40</span></li>
+        <li>Quadro dos Sonhos do Empreendedor <span class="item-price">R$40</span></li>
+        <li>Ativando a Mentalidade de Lucro <span class="item-price">R$197</span></li>
+        <li>Planilha Financeira Exclusiva <span class="item-price">R$97</span></li>
+      </ul>
+
+      <div class="stack-total">
+        <div class="label">Valor total do pacote</div>
+        <div class="value-old">de R$504</div>
+        <div class="value-new">por R$67</div>
+        <div class="installments">ou 9x de R$8,80 no cartão</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-soft">
+    <div class="container">
+      <div class="authority">
+        <img src="https://res.cloudinary.com/dtgcobo29/image/upload/v1767848027/18-site_ilf8dy.webp" alt="Márcio Morais, mentor financeiro" loading="lazy">
+        <div>
+          <h3>Márcio Morais</h3>
+          <p>24 anos em gestão financeira, mais de 150 empresas atendidas — e-commerce, salões, clínicas, academias, barbearias, oficinas, consultorias, indústrias e freelancers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="guarantee">
+        <div class="shield">🛡️</div>
+        <h3>Risco zero: 7 dias de garantia</h3>
+        <p>Se você aplicar o método e sentir que não é pra você, devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-soft">
+    <div class="container">
+      <h2 class="section-title">Perguntas rápidas</h2>
+      <div class="faq-item">
+        <h4>Preciso entender de matemática ou contabilidade?</h4>
+        <p>Não. O método foi feito pra dono de negócio que não tem tempo nem paciência pra números complicados.</p>
+      </div>
+      <div class="faq-item">
+        <h4>Funciona pro meu tipo de negócio?</h4>
+        <p>Sim. O método já foi aplicado em e-commerce, salões, clínicas, academias, barbearias, oficinas, consultorias, indústrias e negócios de freelancer.</p>
+      </div>
+      <div class="faq-item">
+        <h4>E se eu não gostar?</h4>
+        <p>Você tem 7 dias de garantia incondicional. Se não fizer sentido pra você, devolvemos tudo.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="final-cta">
+    <div class="container">
+      <h2>Seu lucro não vai se destravar sozinho.</h2>
+      <p class="sub">Feche os 7 vazamentos agora, por R$67 à vista ou 9x de R$8,80.</p>
+      <a href="https://pay.hotmart.com/T100741493K?off=6i0q0c7z" class="cta-btn">QUERO DESTRAVAR MEU LUCRO</a>
+      <a href="https://wa.me/5511985905271" class="whatsapp-link">Ficou com dúvida? Fale no WhatsApp</a>
+    </div>
+  </div>
+
+  <footer>
+    Destravando o Lucro — Márcio Morais. Todos os direitos reservados.
+  </footer>
+
+</body>
+</html>
