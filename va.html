@@ -115,14 +115,15 @@ src="https://www.facebook.com/tr?id=642109472173213&ev=PageView&noscript=1"
     transition:transform .1s ease;
   }
   .cta-btn:active{transform:scale(.98);}
-  .price-line{
-    text-align:center;
-    color:#fff;
-    font-size:15px;
-    margin-top:14px;
-    font-weight:600;
-  }
-  .price-line small{display:block;color:#B7C7BF;font-weight:400;font-size:13px;margin-top:4px;}
+  .price-block{text-align:center;margin-bottom:16px;}
+  .price-block .price-label{font-size:12px;color:#B7C7BF;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;}
+  .price-block .price-main{line-height:1;margin-bottom:8px;}
+  .price-block .price-main .inst-label{display:block;font-size:16px;font-weight:700;color:#D9E4DE;margin-bottom:2px;}
+  .price-block .price-main .inst-value{display:block;font-size:56px;font-weight:900;color:var(--accent);line-height:1;}
+  .price-block .price-cash{font-size:17px;font-weight:700;color:#fff;}
+  .price-block .price-cash strong{font-weight:800;}
+  .price-trust{margin-top:12px;font-size:13.5px;color:#D9E4DE;line-height:1.45;}
+  .price-trust strong{display:block;font-size:15px;color:var(--accent);font-weight:800;margin-bottom:2px;}
   .trust-line{
     text-align:center;
     font-size:12.5px;
@@ -292,11 +293,16 @@ src="https://www.facebook.com/tr?id=642109472173213&ev=PageView&noscript=1"
         <img src="https://res.cloudinary.com/dtgcobo29/image/upload/v1767848025/2-site_yvfif4.png" alt="Antes e depois da organização financeira do negócio" loading="eager">
       </div>
 
-      <a href="https://pay.hotmart.com/T100741493K?off=6i0q0c7z" class="cta-btn">QUERO DESTRAVAR MEU LUCRO</a>
-      <div class="price-line">
-        R$67 à vista ou 9x de R$8,80
-        <small>R$504 em bônus inclusos — oferta por tempo limitado</small>
+      <div class="price-block">
+        <p class="price-label">Condição especial por tempo limitado</p>
+        <div class="price-main">
+          <span class="inst-label">9x de</span>
+          <span class="inst-value">R$ 8,80</span>
+        </div>
+        <p class="price-cash">ou <strong>R$ 67,00</strong> à vista</p>
       </div>
+      <a href="https://pay.hotmart.com/T100741493K?off=6i0q0c7z" class="cta-btn">QUERO DESTRAVAR MEU LUCRO</a>
+      <p class="price-trust"><strong>ACESSO VITALÍCIO</strong>Você só paga uma única vez esse valor! R$504 em bônus inclusos.</p>
       <div class="trust-line">🔒 Compra 100% segura via Hotmart • Garantia de 7 dias</div>
     </div>
   </div>
